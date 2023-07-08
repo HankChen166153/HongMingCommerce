@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <!-- NAV -->
+        <div class="nav container">
+            <a href="#" class="logo"><span>HMC's </span>shop</a>
+            <!-- CART icon -->
+            <i class='bx bx-cart' id="cart-icon"></i>
+        </div>
+        <!-- Cart -->
+        <div class="cart">
+            <h2 class="cart-title">Your Cart</h2>
+            <!-- content -->
+            <div class="cart-content">
+
+            </div>
+            <!-- Total -->
+            <div class="total">
+                <div class="total-title">Total</div>
+                <div class="total-price">$0</div>
+            </div>
+            <!-- Buy Button -->
+            <button type="button" class="btn-buy">Buy Now</button>
+            <!-- Cart Close -->
+            <i class='bx bx-x' id="close-cart"></i>
+        </div>
+        <!-- 用戶資料 -->
+        <div id="userinfo"></div>
+
+        <!-- 選單 -->
+        <div class="topnav" id="menu">
+            <div class="">
+                <a href="#" onclick="GoToState('list')">List</a>
+                <!-- <a href="#" onclick="GoToState('tradeList')">Trade List</a> -->
+                <a href="#" onclick="logout()">Logout</a>
+
+            </div>
+        </div>
+
+        <!-- 會員登入 -->
+        <div class="content-box">
+            <div id="login">
+                <div class="login-card">
+                    <div class="box">
+                        <span class="borderLine"></span>
+                        <form>
+                            <h1>Login</h1>
+                            <div class="form-item">
+                                <input type="text" class="form-element" id="account" placeholder="Username or email"
+                                    value="doraemon">
+                                <span>username</span>
+                                <i></i>
+                            </div>
+                            <div class="form-item">
+                                <input type="password" id="password" class="form-element" placeholder="password"
+                                    value="1234">
+                                <span>password</span>
+                                <i></i>
+                            </div>
+                            <!-- <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">RememberMe</label>  -->
+
+                            <div class="flex">
+                                <button type="button" onclick="Login()">登錄</button>
+                                <button type="button" onclick="GoToState('reg')">註冊</button>
+                                <!-- <button type="button" class="btn btn-outline-primary" onclick="GoToState('reg')">reg</button> -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 註冊會員 -->
+            <div id="reg">
+                <div class="reg-content">
+                    <div class="regbox">
+                        <form action="">
+                            <h1>註冊會員</h1>
+                            <label class="reg_name">姓名:</label>
+                            <input type="text" id="username_reg" value="" placeholder="ex:蜘蛛人"></br>
+                            <label class="reg_ac">帳號:</label>
+                            <input type="text" id="account_reg" value="" placeholder="4-20英文字"></br>
+                            <label class="reg_pw">密碼:</label>
+                            <input type="text" id="pw_reg" value="" placeholder="4-20數字"></br>
+                            <label class="reg_mail">信箱:</label>
+                            <input type="text" id="email_reg" value="" placeholder="選填 ex: abc@gmail.com"></br>
+                            <button onclick="register()" class="reg_button">註冊</button>
+                            <button onclick="backHomepage()" class="reg_button">回到登入頁</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品清單 -->
+
+            <div id="list">
+                <h2 class="selection-title">商品一覽</h2>
+                    <div id="listItems">
+                        <!-- <i class='bx bx-cart add-cart'></i> -->
+                    </div>
+                <div id="pageState"></div>
+
+            </div>
+
+            <!-- 商品資訊 -->
+            <div id="info">
+                <h2>ItemInfo</h2>
+                <div id="itemInfo">
+
+                </div>
+            </div>
+
+            <!--交易紀錄-->
+            <div id="tradeList">
+                <h2>Trade List</h2>
+                <div id="tradeLog"></div>
+            </div>
+
+        </div>
+    </header>
+    <footer>
+    <div class="foot-title">
+        製作於2023
+    </div>
+</footer>    
+</body>
+<script src="js/Util.js"></script>
+
+
+
+
+</html>
